@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= search %> | QuizzHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel = 'stylesheet' href = 'searchstyles.css'>
+</head>
+<body>
+    <div class = 'headbar'>
+        <a href = '/' class = 'home'>QuizzHub  </a>
+        <a href = '/create' class = 'create'>CREATE</a>
+        <p style = 'color:white'>Hi <%= name %></p>
+    </div>
+    <div class = 'search-container'>
+        <form action = '/home-n' method = 'post'>
+            <input type = 'text' placeholder = 'Search...' name = 'search' class = 'search-input'>
+            <img src = 'searchicon.png' class = 'search-icon'>
+        </form>
+    </div>
+    <form action = '/logout' method = 'DELETE'>
+        <button type = 'submit' class = 'logout'>Logout</button>
+    </form>
+    <h1>Search results for <%= search %></h1>
+    <% search_list.forEach((search) => { %>
+        <a href = '/user-page/<%= search.name %>'><%= search.name %></a>
+        <br>
+    <% }) %>   
+</body>
+</html>

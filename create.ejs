@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create | QuizzHub</title>
+    <link rel = 'stylesheet' href = 'createstyles.css'>
+</head>
+<body>
+    <div class = 'headbar'>
+        <a href = '/home-n' class = 'home'>QuizzHub  </a>
+        <a href = '/create' class = 'create'>CREATE</a>
+        <p style = 'color:white'>Hi <%= pageName %></p>
+    </div>
+    <div class = 'search-container'>
+        <form action = '/home-n' method = 'post'>
+            <input type = 'text' placeholder = 'Search...' name = 'search' class = 'search-input'>
+            <img src = 'searchicon.png' class = 'search-icon'>
+        </form>
+    </div>
+    <form action = '/logout' method = 'DELETE'>
+        <button type = 'submit' class = 'logout'>Logout</button>
+    </form>
+    <form action = '/create' method = 'POST'>
+        <label for = 'question' style = 'display:flex; align-items:center;'>Enter your question here: </label>
+        <textarea name = 'question' id = 'question-area' placeholder = "Type.." style = "resize:none;"></textarea>
+        <label for = 'answer' style = 'display:flex; align-items:center;'>Enter your answer here: </label>
+        <textarea name = 'answer' id = 'answer-area' placeholder = "Type.." style = "resize:none;"></textarea>
+        <button type = 'submit' class = 'quesbutton' name = 'buttonClick' value = 'continue'>Continue adding</button>
+        <button type = 'submit' class = 'quesbutton' name = 'buttonClick' value = 'endquiz'>End quiz</button>
+    </form>
+</body>
+</html>
